@@ -2193,6 +2193,7 @@ public class DefaultBeanContext implements BeanContext {
             for (AnnotationValue<Indexed> index : indexes) {
                 final Class indexedType = index.getValue(Class.class).orElse(null);
                 if (indexedType != null) {
+                    indexedTypes.add(indexedType);
                     final Collection<BeanDefinitionReference> indexed = resolveTypeIndex(indexedType);
                     indexed.add(beanDefinitionReference);
                 }
